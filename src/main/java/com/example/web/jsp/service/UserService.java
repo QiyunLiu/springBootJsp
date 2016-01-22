@@ -55,12 +55,15 @@ public class UserService {
 
 	}
 
-	public void deleteUser(long id) {
+	public String deleteUser(long id) {
+		String massage="User not found.";
 		for (User user : users) {
 			if (user.getId() == id) {
-				users.remove(id);
+				users.remove(user);
+				massage="Delete successful.";			
+				break;
 			}
-		}
+		}return massage;
 
 	}
 

@@ -26,11 +26,11 @@ public class UserController {
 		return "/users/index";
 	}
 
-	@RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
-	public String deleteUser(@RequestParam(value = "id", required = true) long id) {
-		userService.deleteUser(id);
-		
-		return "/users";
+	@RequestMapping(value = "/users/index/{id}", method = RequestMethod.GET)
+	public String deleteUser(@PathVariable long id, Map<String, Object> model) {
+		String mass = userService.deleteUser(id);
+		model.put("users", userService.getUsers());
+		return "/users/index";
 	}
 
 	@RequestMapping(value = "/users/newuser", method = RequestMethod.GET)

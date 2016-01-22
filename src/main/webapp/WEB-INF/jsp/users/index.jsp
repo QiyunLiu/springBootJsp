@@ -25,7 +25,7 @@
     		<td>${user.lastname}</td>  
     		<td>${user.address}</td>  
     		<td><input type="button" onclick="location.href='/users/edit/${user.id}'"  value="edit"/></td>
-    		<td><input type="button" onclick="location.href='/users/delete/${user.id}'"  value="delete"/></td>
+    		<td><input type="button" onclick="location.href='/users/index/${user.id}'"  value="delete"/></td>
     	</tr>  
     	
   	</c:forEach>
