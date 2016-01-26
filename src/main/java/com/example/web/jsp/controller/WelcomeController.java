@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WelcomeController {
 
 	@Value("${application.message:Welcome to the mainpage.}")
-	private String message="Welcome..";
-	
+	private String message = "Welcome..";
+
 	@RequestMapping("/")
-	public String firstPage(Map<String, Object> model){
+	public String firstPage(Map<String, Object> model) {
 		model.put("time", new Date());
 		model.put(message, this.message);
 		return "pageone";
 	}
-	
 
 }
